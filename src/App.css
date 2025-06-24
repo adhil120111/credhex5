@@ -1,0 +1,253 @@
+.App {
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  color: #e0e0e0;
+}
+
+.waves-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 20px;
+  backdrop-filter: blur(1px);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideDown 0.8s ease-out;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: rotate 10s linear infinite;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #58bc82 0%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Setup Section */
+.setup-section {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 800px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeInUp 1s ease-out;
+}
+
+.setup-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.setup-content {
+  text-align: left;
+}
+
+.setup-description {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.setup-steps {
+  color: #aaa;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.setup-steps li {
+  margin-bottom: 10px;
+}
+
+.setup-steps a {
+  color: #58bc82;
+  text-decoration: none;
+}
+
+.setup-steps a:hover {
+  text-decoration: underline;
+}
+
+/* Loading */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #e0e0e0;
+}
+
+.loading-spinner-large {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #58bc82;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+.loading-container p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Notification */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  z-index: 1000;
+  animation: slideInRight 0.3s ease-out;
+  max-width: 400px;
+  word-wrap: break-word;
+}
+
+.notification.success {
+  background: linear-gradient(135deg, #58bc82, #4caf50);
+}
+
+.notification.error {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+}
+
+/* Dark Theme (Always Applied) */
+.dark-theme {
+  color: #e0e0e0;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .app-title {
+    font-size: 2rem;
+  }
+  
+  .setup-section {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+  
+  .main-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.8rem;
+  }
+  
+  .setup-title {
+    font-size: 1.5rem;
+  }
+  
+  .setup-description {
+    font-size: 1rem;
+  }
+}
