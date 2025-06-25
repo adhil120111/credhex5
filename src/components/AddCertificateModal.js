@@ -122,6 +122,7 @@ const AddCertificateModal = ({ onClose, onAdd, initialData = {} }) => {
                 placeholder="e.g., AWS Certified Solutions Architect"
               />
               {errors.title && <p className="mt-1 text-sm text-red-400">{errors.title}</p>}
+              }
             </div>
 
             {/* Issuing Organization */}
@@ -141,6 +142,7 @@ const AddCertificateModal = ({ onClose, onAdd, initialData = {} }) => {
                 placeholder="e.g., Amazon Web Services"
               />
               {errors.issuer && <p className="mt-1 text-sm text-red-400">{errors.issuer}</p>}
+              }
             </div>
 
             {/* Dates */}
@@ -160,6 +162,7 @@ const AddCertificateModal = ({ onClose, onAdd, initialData = {} }) => {
                   }`}
                 />
                 {errors.issue_date && <p className="mt-1 text-sm text-red-400">{errors.issue_date}</p>}
+                }
               </div>
 
               <div>
@@ -177,6 +180,7 @@ const AddCertificateModal = ({ onClose, onAdd, initialData = {} }) => {
                   }`}
                 />
                 {errors.expiry_date && <p className="mt-1 text-sm text-red-400">{errors.expiry_date}</p>}
+                }
               </div>
             </div>
 
@@ -213,6 +217,7 @@ const AddCertificateModal = ({ onClose, onAdd, initialData = {} }) => {
                 placeholder="https://..."
               />
               {errors.verification_url && <p className="mt-1 text-sm text-red-400">{errors.verification_url}</p>}
+              }
             </div>
 
             {/* Description */}
